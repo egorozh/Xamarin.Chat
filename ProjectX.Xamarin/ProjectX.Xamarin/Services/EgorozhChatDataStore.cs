@@ -9,20 +9,20 @@ using ProjectX.Xamarin.Models;
 
 namespace ProjectX.Xamarin.Services
 {
-    public class AzureDataStore : IDataStore<Item>
+    public class EgorozhChatDataStore : IDataStore<Item>
     {
         HttpClient client;
         IEnumerable<Item> items;
 
-        public AzureDataStore()
+        public EgorozhChatDataStore()
         {
-            client = new HttpClient();
-            client.BaseAddress = new Uri($"{App.AzureBackendUrl}/");
+            client = new HttpClient {BaseAddress = new Uri($"{App.EgorozhBackendUrl}/")};
 
             items = new List<Item>();
         }
 
         bool IsConnected => Connectivity.NetworkAccess == NetworkAccess.Internet;
+
         public async Task<IEnumerable<Item>> GetItemsAsync(bool forceRefresh = false)
         {
             if (forceRefresh && IsConnected)
@@ -52,7 +52,8 @@ namespace ProjectX.Xamarin.Services
 
             var serializedItem = JsonConvert.SerializeObject(item);
 
-            var response = await client.PostAsync($"api/item", new StringContent(serializedItem, Encoding.UTF8, "application/json"));
+            var response = await client.PostAsync($"api/item",
+                new StringContent(serializedItem, Encoding.UTF8, "application/json"));
 
             return response.IsSuccessStatusCode;
         }
