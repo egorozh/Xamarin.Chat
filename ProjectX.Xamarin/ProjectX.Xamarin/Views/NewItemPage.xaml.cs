@@ -1,17 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using ProjectX.Xamarin.Models;
+using System;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
-
-using ProjectX.Xamarin.Models;
 
 namespace ProjectX.Xamarin.Views
 {
-    // Learn more about making custom code visible in the Xamarin.Forms previewer
-    // by visiting https://aka.ms/xamarinforms-previewer
-    [DesignTimeVisible(false)]
-    public partial class NewItemPage : ContentPage
+    public partial class NewItemPage 
     {
         public Item Item { get; set; }
 

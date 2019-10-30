@@ -17,7 +17,7 @@ namespace ProjectX.Xamarin.ViewModels
 
         public ItemsViewModel()
         {
-            Title = "Browse";
+            Title = "Chat";
             Items = new ObservableCollection<Item>();
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
 
