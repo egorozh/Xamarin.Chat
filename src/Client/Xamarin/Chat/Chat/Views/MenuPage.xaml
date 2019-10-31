@@ -1,0 +1,25 @@
+﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             mc:Ignorable="d"
+             x:Class="Chat.MenuPage"
+             Title="Menu">
+
+    <StackLayout VerticalOptions="FillAndExpand">
+        <ListView HasUnevenRows="True"
+                  ItemsSource="{Binding MenuItems}"
+                  SelectedItem="{Binding SelectedItem}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid Padding="10">
+                            <Label Text="{Binding Title}" FontSize="20" />
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+
+</ContentPage>
