@@ -1,0 +1,23 @@
+﻿<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:controls="clr-namespace:XamarinUniversity.Controls;assembly=XamU.Infrastructure"
+             xmlns:chat="clr-namespace:Chat;assembly=Chat"
+             mc:Ignorable="d"
+             x:Class="Chat.ChatMessageListView">
+
+    <Grid VerticalOptions="End">
+        <ScrollView>
+            <controls:ItemsControl ItemsSource="{Binding FilteredItems}">
+                <controls:ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <chat:ChatMessageListItemView />
+                    </DataTemplate>
+                </controls:ItemsControl.ItemTemplate>
+            </controls:ItemsControl>
+        </ScrollView>
+    </Grid>
+
+
+</ContentView>

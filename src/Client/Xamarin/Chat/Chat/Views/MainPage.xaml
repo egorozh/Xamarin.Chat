@@ -14,7 +14,7 @@
                 </OnPlatform>
             </NavigationPage.Icon>
             <x:Arguments>
-                <chat:ItemsPage />
+                <chat:ChatPage />
             </x:Arguments>
         </NavigationPage>
     </MasterDetailPage.Detail>

@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:chat="clr-namespace:Chat;assembly=Chat"
+             mc:Ignorable="d"
+             x:Class="Chat.ChatPage"
+             Title="{Binding Title}"
+             BackgroundColor="#212121">
+
+    <ContentPage.ToolbarItems>
+    </ContentPage.ToolbarItems>
+
+
+    <Grid>
+
+        <Grid.RowDefinitions>
+
+            <!-- Chat List -->
+            <RowDefinition Height="*" />
+
+            <!-- Message Send Text box -->
+            <RowDefinition Height="Auto" />
+
+        </Grid.RowDefinitions>
+
+        <!-- Chat List -->
+        <chat:ChatMessageListView />
+
+        <!-- Message Send Text box -->
+        <Grid Grid.Row="1"
+              MinimumHeightRequest="50">
+
+            <Grid.ColumnDefinitions>
+                <!-- Attach button -->
+                <ColumnDefinition Width="Auto" />
+
+                <!-- Text entry box -->
+                <ColumnDefinition Width="*" />
+
+                <!-- Additional buttons -->
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <!-- Attach button -->
+            <!--<Button VerticalOptions="Start"
+                    Command="{Binding AttachmentButtonCommand}" />-->
+
+            <!-- Message box -->
+            <Entry x:Name="MessageText"
+                   Grid.Column="1"
+                   VerticalOptions="Center"
+                   Placeholder="Write a message..."
+                   TextColor="White"
+                   PlaceholderColor="Azure" />
+
+            <!-- Additional buttons -->
+            <StackLayout Grid.Column="2"
+                         Orientation="Horizontal"
+                         VerticalOptions="Start"
+                         Margin="0, 0, 8, 0">
+
+                <!--Emoji button-->
+                <!--<Button />-->
+
+                <!--Send button-->
+                <Button Text="Send"
+                        Padding="8"
+                        Command="{Binding SendCommand}" />
+
+            </StackLayout>
+
+        </Grid>
+    </Grid>
+</ContentPage>

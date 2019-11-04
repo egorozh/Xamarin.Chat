@@ -1,0 +1,52 @@
+﻿<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:chat="clr-namespace:Chat;assembly=Chat"
+             mc:Ignorable="d"
+             x:Class="Chat.ChatMessageListItemView">
+
+    <Grid Padding="2">
+        <Grid>
+            <!-- Chat message container -->
+            <Grid>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <!-- Message text/attachments grid -->
+                <Grid>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <!-- Chat Message Text Bubble -->
+                    <Grid Grid.Row="1"
+                          HorizontalOptions="{Binding SentByMe, Converter={chat:SentByMeToAlignmentConverter}}">
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+
+                        <!-- Speech bubble rectangle -->
+                        <Frame Padding="15"
+                               CornerRadius="15"
+                               BackgroundColor="#3C3C3C">
+
+                            <!-- Message text -->
+                            <Label VerticalOptions="Center"
+                                   TextColor="White"
+                                   Text="{Binding Message}" />
+                        </Frame>
+                    </Grid>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+</ContentView>

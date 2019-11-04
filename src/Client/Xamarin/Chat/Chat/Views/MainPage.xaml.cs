@@ -27,7 +27,7 @@ namespace Chat
                 switch (id)
                 {
                     case (int) MenuItemType.Chat:
-                        MenuPages.Add(id, new NavigationPage(new ItemsPage()));
+                        MenuPages.Add(id, new NavigationPage(new ChatPage()));
                         break;
                     case (int) MenuItemType.About:
                         MenuPages.Add(id, new NavigationPage(new AboutPage()));
