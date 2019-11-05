@@ -4,6 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              mc:Ignorable="d"
              x:Class="Chat.MenuPage"
+             Visual="Material"
              Title="Menu">
 
     <StackLayout VerticalOptions="FillAndExpand">

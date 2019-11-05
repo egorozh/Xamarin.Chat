@@ -4,6 +4,7 @@
                   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                   xmlns:chat="clr-namespace:Chat;assembly=Chat"
                   mc:Ignorable="d"
+                  Visual="Material"
                   x:Class="Chat.MainPage">
 
     <MasterDetailPage.Detail>
